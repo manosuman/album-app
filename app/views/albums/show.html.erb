@@ -1,0 +1,45 @@
+<div class="showhead">
+  <div class="showhead-1">
+    <h2><%= @album.title %></h2>
+
+    <p><%= @album.description %></p>
+
+  </div>
+  <div class="showhead-2">
+    <h2>Add a Photos</h2>
+    <%= form_with model: [ @album, @album.images.build ] do |form| %>
+      <p>
+        <%= form.file_field :image %>
+      </p>
+  </div>
+  <div>
+  <h2>Name of Photos</h2>
+      <p>
+        <%= form.text_field :name %>
+      </p>
+      <p>
+        <%= form.submit %>
+      </p>
+    <% end %>
+  </div>
+</div>
+
+
+<h2>photos</h2>
+<% @album.images.each do |photo| %>
+  <div class="gallery">
+    <% if photo.image.attached? %>
+      <p>
+        <%= image_tag(photo.pics)%>
+        <%= photo.name%>
+      </p>  
+      <p>
+        <%= link_to "delete",album_image_path(photo), :method => :delete %>
+      </p>
+      <p>
+        <%= render 'albums/popup'%>
+      </p>
+    <% end %> 
+
+  </div>
+<% end %>

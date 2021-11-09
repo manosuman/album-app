@@ -1,0 +1,61 @@
+<%# <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> %>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">                    
+  $(document).ready(function(){
+      $(".tagitem").click(function(){
+        var imageid = $(this).attr("checkid");
+          $("#exampleModalCenter").modal('show');
+          $(".mytagform").attr('action', '/images/'+imageid+'/tags');
+        });
+      });
+</script>    
+                  
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+      <div class="modal-body">
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript">
+        function onAddTag(tag) {
+          alert("Added a tag: " + tag);
+        }
+        function onRemoveTag(tag) {
+          alert("Removed a tag: " + tag);
+        }
+
+        function onChangeTag(input,tag) {
+          alert("Changed a tag: " + tag);
+        }
+
+          // $("#mytagBtn").click(function(){
+          //       var tagsArray = $("#tags_1").val();
+          //         alert(tagsArray);
+                
+          // });
+               
+        $(function(){
+            $('#tags_1').tagsInput({width:'auto'});                      
+        });
+        
+      </script>
+          <form  method="post" data-remote="true" class="mytagform">
+        <p><label>Defaults:</label>
+      <input name="tag_name" id="tags_1" type="text" class="tags" value="" /></p>
+      <input type="submit" value="Save" data-disable-with="Save " />
+      </form>
+                      
+      </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="mytagBtn">Save changes</button>
+      </div>                
+    </div>
+  </div>
+</div>
+
+ <button type="button" checkid="<%=@album.images%>" class="btn btn-primary btn-lg tagitem"  data-toggle="modal" >Preview</button>

@@ -1,0 +1,29 @@
+<div class="albumhead">
+  <div class="albumhead-1">
+    <h1>Albums</h1>
+  </div>
+  <div class="albumhead-2">
+    <h3>
+    <%= link_to "Create New Album",new_album_path %>
+    </h3>
+  </div>
+</div>
+<% @albums.each do |album| %>
+  <div class="gallery">
+    <h3>
+      <%= album.title %>
+    </h3>
+    <h3>
+      <%= album.description %>
+    </h3>
+    <h3>
+      <%= link_to "Show Album",album_path(album) %>
+    </h3>
+    <h3>
+      <%= link_to "Edit Album",edit_album_path(album) %>
+    </h3>
+    <h3>
+      <%= link_to "Delete Album",albums_path(album),method: :delete %>
+    </h3>
+  </div>
+<% end %>

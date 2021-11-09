@@ -1,0 +1,9 @@
+<%= form_with model: [@image, @image.tags.build ] do |form| %>
+  <div>
+    <%= form.label :tag %><br>
+    <%= form.text_field :tag %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
