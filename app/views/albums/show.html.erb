@@ -1,10 +1,7 @@
+<div class="showhead-1">
+  <h1><%= @album.title %></h1>
+</div>
 <div class="showhead">
-  <div class="showhead-1">
-    <h2><%= @album.title %></h2>
-
-    <p><%= @album.description %></p>
-
-  </div>
   <div class="showhead-2">
     <h2>Add a Photos</h2>
     <%= form_with model: [ @album, @album.images.build ] do |form| %>
@@ -13,33 +10,38 @@
       </p>
   </div>
   <div>
-  <h2>Name of Photos</h2>
+    <h2>Name of Photos</h2>
       <p>
         <%= form.text_field :name %>
       </p>
-      <p>
-        <%= form.submit %>
-      </p>
-    <% end %>
   </div>
+  <div>
+    <h2>Add Photo Tags</h2>
+    <p>
+      <%= form.text_field :all_tags %>
+    </p>
+  </div>
+  <div>
+    <h3 class="submitimg">
+      <%= form.submit %>
+    </h3>
+  </div>
+  <% end %>
 </div>
 
 
-<h2>photos</h2>
+<h2 id="phototitle"><%=@album.title%> Photos</h2>
 <% @album.images.each do |photo| %>
   <div class="gallery">
     <% if photo.image.attached? %>
       <p>
         <%= image_tag(photo.pics)%>
-        <%= photo.name%>
-      </p>  
-      <p>
-        <%= link_to "delete",album_image_path(photo), :method => :delete %>
       </p>
-      <p>
-        <%= render 'albums/popup'%>
-      </p>
+      <h4><%= photo.name%></h4>
+      <h6><%= photo.all_tags%></h6>  
+      <h5>
+        <%= link_to "Delete",album_image_path(photo), :method => :delete %>
+      </h5>  
     <% end %> 
-
   </div>
 <% end %>

@@ -1,3 +1,21 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+h2.emailhead{
+    text-align: center;
+    color: white;
+    background-color: #1abc9c;
+}
+div.dashboard{
+    text-align: center;
+}
+.header {
+    padding: 80px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    height: 56vh;
+  }
+  .header h1 {
+    font-size: 60px;
+  }

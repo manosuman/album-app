@@ -7,7 +7,7 @@ div.gallery {
   float: left;
   width: 23vw;
   text-align: center;
-  background-color: aquamarine;
+  background-color: #1abc9c;
 }
   
 div.gallery:hover {
@@ -17,20 +17,32 @@ div.gallery:hover {
 div.showhead{
   border: 1px solid #ccc;
   margin-left: 5px;
-  width: 94.5vw;
+  width: 100vw;
   display: flex;
   justify-content: space-between;
+  background-color:#1abc9c;
+}
+h3.submitimg{
+  padding-top: 20px;
+}
+div.showhead-1{
+  text-align: center;
+  background-color: #1abc9c;
 }
 div.albumhead{
   background-color: black;
   color: white;
   margin-left: 5px;
   border: 1px solid #ccc;
-  width: 99vw;
+  width: 97vw;
   display: flex;
   justify-content: space-between;
+  padding: 10px;
 }
-
+h2#phototitle{
+  text-align: center;
+  color: black
+}
 // Form
 
 input[type=text] {
@@ -59,4 +71,9 @@ input[type=button], input[type=submit] {
   text-decoration: none;
   margin: 4px 2px;
   cursor: pointer;
+}
+.footer{
+  padding: 20px;
+  text-align: center;
+  background: #aaa;
 }

@@ -1,8 +1,7 @@
 class CreateTags < ActiveRecord::Migration[6.1]
   def change
     create_table :tags do |t|
-      t.string :tag
-      t.references :image, null: false, foreign_key: true
+      t.string :name
 
       t.timestamps
     end

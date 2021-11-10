@@ -1,3 +1,4 @@
 class Tag < ApplicationRecord
-  belongs_to :image
+  has_many :taggings ,dependent: :destroy
+  has_many :images, through: :taggings
 end
