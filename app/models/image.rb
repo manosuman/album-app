@@ -1,4 +1,7 @@
 class Image < ApplicationRecord
+  validates :image, presence: true
+  validates :name, presence: true
+  validates :all_tags, presence: true
   belongs_to :album
   has_one_attached :image
   has_many :taggings, dependent: :destroy
