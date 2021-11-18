@@ -14,15 +14,17 @@ div.gallery:hover {
   border: 1px solid #777;
 }
   
-div.showhead{
-  border: 1px solid #ccc;
-  margin-left: 5px;
-  width: 100vw;
-  display: flex;
-  justify-content: space-between;
-  background-color:#1abc9c;
+// div.showhead{
+//   border: 1px solid #ccc;
+//   margin-left: 5px;
+//   width: 100vw;
+//   display: flex;
+//   justify-content: space-between;
+//   background-color:#1abc9c;
+// }
+div.showhead h2{
+  text-align: center;
 }
-
 div.showhead-1{
   text-align: center;
   // background-color: #1abc9c;
@@ -85,4 +87,7 @@ h2.createalbum{
   text-align: right;
   color: white;
   text-decoration: none;
+}
+#msg{
+  color: red;
 }

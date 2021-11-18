@@ -7,7 +7,7 @@
           <%= form.label :title %><br />
           <%= form.text_field :title, :class => 'form-control' %>
           <% @album.errors.full_messages_for(:title).each do |message| %>
-          <div><%= message %></div>
+          <div id='msg'><%= message %></div>
           <% end %>
         </div>
       </div>
@@ -18,7 +18,7 @@
           <%= form.label :description %><br />
           <%= form.text_area :description, :class => 'form-control' %>
           <% @album.errors.full_messages_for(:description).each do |message| %>
-          <div><%= message %></div>
+          <div id='msg'><%= message %></div>
           <% end %>
         </div>
       </div>

@@ -314,7 +314,7 @@ $(document).ready(function(){
 						<td><%= album.description %></td>
 						<td><%= link_to "Show Album",user_album_path(album,user_id: current_user.id) %></td>
 						<td><%= link_to "Edit Album",edit_user_album_path(album,user_id: current_user.id) %></td>
-						<td><%= link_to "Delete Album",user_album_path(album,user_id: current_user.try(:id)),method: :delete %></td>
+						<td><%= link_to "Delete Album",user_album_path(album,user_id: current_user.try(:id)),method: :delete, data: { confirm: "Are you sure?" } %></td>
 					</tr>
         <%end%>
 				</tbody>

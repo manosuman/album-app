@@ -1,32 +1,37 @@
-<div class="showhead-1">
-  <h1><%= @album.title %></h1>
-</div>
 <div class="showhead">
-  <div class="showhead-2">
-    <h2>Add a Photos</h2>
-    <%= form_with url: user_album_images_path(album_id: @album.id)  do |form| %>
-      <p>
-        <%= form.file_field :image %>
-      </p>
-  </div>
-  <div>
-    <h2>Name of Photos</h2>
-      <p>
-        <%= form.text_field :name %>
-      </p>
-  </div>
-  <div>
-    <h2>Add Photo Tags</h2>
-    <p>
-      <%= form.text_field :all_tags %>
-    </p>
-  </div>
-  <div>
-    <h2>Save Photo</h2>
-    <h3 class="submitimg">
-      <%= form.submit %>
-    </h3>
-  </div>
+  <h2>Add a Photos</h2>
+  <%= form_with url: user_album_images_path(album_id: @album.id)  do |form| %>
+    <div class="field">
+      <div class="row">
+        <div class="col-md-4 offset-4">
+          <%= form.label :image %><br />
+          <%= form.file_field :image, :class => 'form-control' %> 
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <div class="row">
+        <div class="col-md-4 offset-4">
+          <%= form.label :name %><br />
+          <%= form.text_field :name, :class => 'form-control' %> 
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <div class="row">
+        <div class="col-md-4 offset-4">
+          <%= form.label :Tags %><br />
+          <%= form.text_field :all_tags, :class => 'form-control' %> 
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <div class="row">
+        <div class="col-md-4 offset-4">
+          <%= form.submit "Save", :class => 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
   <% end %>
 </div>
 
@@ -40,7 +45,7 @@
       <h4><%= photo.name%></h4>
       <h6><%= photo.all_tags%></h6>  
       <h5>
-        <%= link_to "Delete",user_album_image_path(photo,user_id: current_user.id), :method => :delete %>
+        <%= link_to "Delete",user_album_image_path(photo,user_id: current_user.id), :method => :delete,data: { confirm: "Are you sure?" } %>
       </h5>  
     <% end %> 
   </div>
