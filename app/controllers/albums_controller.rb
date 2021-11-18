@@ -39,10 +39,14 @@ class AlbumsController < ApplicationController
   end
 
   def edit
+    # @user = User.find(current_user.id)
+    # @album = @user.albums.find(params[:id])
     @album = Album.find(params[:id])
   end
 
   def update
+    # @user = User.find(current_user.id)
+    # @album = @user.albums.find(params[:id])
     @album = Album.find(params[:id])
 
     if @album.update(album_params)
