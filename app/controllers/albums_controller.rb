@@ -1,24 +1,41 @@
 class AlbumsController < ApplicationController
   def index
-    @albums = Album.all
+    @user = User.find(current_user.id)
+    @albums = @user.albums.all
+    # @albums = Album.all
   end
 
   def show
-    @album = Album.find(params[:id])
+    @user = User.find(current_user.id)
+    @album = @user.albums.find_by_id(params[:id])
+    # @album = Album.find(params[:id])
   end
 
   def new
     @album = Album.new
   end
 
-  def create
-    @album = Album.new(album_params)
+  # def create
+  #   @album = Album.new(album_params)
 
+  #   if @album.save
+  #     redirect_to albums_path
+  #   else
+  #     render :new
+  #   end
+  # end
+
+  def create
+    # debugger
+    @user = User.find(current_user.id)
+    @album = @user.albums.create(album_params)
     if @album.save
-      redirect_to albums_path
+      redirect_to user_albums_path
     else
       render :new
     end
+    # @album.save!
+    # redirect_to user_albums_path
   end
 
   def edit
@@ -29,7 +46,7 @@ class AlbumsController < ApplicationController
     @album = Album.find(params[:id])
 
     if @album.update(album_params)
-      redirect_to albums_path
+      redirect_to user_albums_path
     else
       render :edit
     end
@@ -38,12 +55,12 @@ class AlbumsController < ApplicationController
   def destroy
     @album = Album.find(params[:id])
     @album.destroy
-    redirect_to albums_path
+    redirect_to user_albums_path
   end
 
   private
     def album_params
-      params.require(:album).permit(:title, :description)
+      params.permit(:title, :description)
     end
 end
 

@@ -17,6 +17,8 @@ gem 'activestorage'
 gem 'image_processing', '~> 1.2'
 
 gem 'bootstrap'
+
+gem 'simple_form'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker

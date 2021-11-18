@@ -7,7 +7,7 @@ div.gallery {
   float: left;
   width: 23vw;
   text-align: center;
-  background-color: #1abc9c;
+  background-color:white;
 }
   
 div.gallery:hover {
@@ -22,12 +22,10 @@ div.showhead{
   justify-content: space-between;
   background-color:#1abc9c;
 }
-h3.submitimg{
-  padding-top: 20px;
-}
+
 div.showhead-1{
   text-align: center;
-  background-color: #1abc9c;
+  // background-color: #1abc9c;
 }
 div.albumhead{
   background-color: black;
@@ -76,4 +74,15 @@ input[type=button], input[type=submit] {
   padding: 20px;
   text-align: center;
   background: #aaa;
+}
+h1.newalbum{
+  text-align: center;
+}
+h2 a{
+  text-decoration: none;
+}
+h2.createalbum{
+  text-align: right;
+  color: white;
+  text-decoration: none;
 }

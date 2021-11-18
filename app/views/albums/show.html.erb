@@ -4,7 +4,7 @@
 <div class="showhead">
   <div class="showhead-2">
     <h2>Add a Photos</h2>
-    <%= form_with model: [ @album, @album.images.build ] do |form| %>
+    <%= form_with url: user_album_images_path(album_id: @album.id)  do |form| %>
       <p>
         <%= form.file_field :image %>
       </p>
@@ -22,13 +22,13 @@
     </p>
   </div>
   <div>
+    <h2>Save Photo</h2>
     <h3 class="submitimg">
       <%= form.submit %>
     </h3>
   </div>
   <% end %>
 </div>
-
 
 <h2 id="phototitle"><%=@album.title%> Photos</h2>
 <% @album.images.each do |photo| %>
@@ -40,7 +40,7 @@
       <h4><%= photo.name%></h4>
       <h6><%= photo.all_tags%></h6>  
       <h5>
-        <%= link_to "Delete",album_image_path(photo), :method => :delete %>
+        <%= link_to "Delete",user_album_image_path(photo,user_id: current_user.id), :method => :delete %>
       </h5>  
     <% end %> 
   </div>
