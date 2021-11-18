@@ -17,7 +17,7 @@
         <div class="col-md-4 offset-4">
           <%= form.label :description %><br />
           <%= form.text_area :description, :class => 'form-control' %>
-          <% @album.errors.full_messages_for(:title).each do |message| %>
+          <% @album.errors.full_messages_for(:description).each do |message| %>
           <div><%= message %></div>
           <% end %>
         </div>
